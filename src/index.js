@@ -45,6 +45,7 @@ class Onboarding extends Component {
     if (!viewableItems[0] || this.state.currentPage === viewableItems[0].index)
       return;
 
+    this.props.onPageChanged && this.props.onPageChanged(viewableItems[0].index);
     this.setState(state => {
       return {
         previousPage: state.currentPage,
